@@ -8,7 +8,7 @@ window.onload = ()=>{
     try {
       // Get checkout session from API
       const res = await fetch(
-        `http://localhost:5000/api/v1/bookings/checkout-session/${tourId}`
+        `/api/v1/bookings/checkout-session/${tourId}`
       );
       const session = await res.json()
   

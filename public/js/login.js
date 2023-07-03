@@ -4,7 +4,7 @@
 
 const login = async (email, password) => {
   try {
-    const res = await fetch('http://localhost:5000/api/v1/users/login', {
+    const res = await fetch('/api/v1/users/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ const login = async (email, password) => {
 
 const logout = async () => {
   try {
-    const res = await fetch('http://localhost:5000/api/v1/users/logout');
+    const res = await fetch('/api/v1/users/logout');
     const apiResponse = await res.json();
     if (apiResponse.status === 'success') location.reload(true);
   } catch (error) {
@@ -65,7 +65,7 @@ const logout = async () => {
 // };
 const updateData = async (form)=>{
   try {
-    const res =  await fetch('http://localhost:5000/api/v1/users/updateMe',{
+    const res =  await fetch('/api/v1/users/updateMe',{
       method: 'PATCH',
       body: form
     });
@@ -80,7 +80,7 @@ const updateData = async (form)=>{
 }
 const updatePassword = async (passwordCurrent,password,passwordConfirm)=>{
   try {
-    const res =  await fetch('http://localhost:5000/api/v1/users/updatePassword',{
+    const res =  await fetch('/api/v1/users/updatePassword',{
       method: 'PATCH',
       headers: {
         "Content-Type":"application/json"
